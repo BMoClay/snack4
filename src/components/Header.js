@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+
 
 function Header() {
 
   const img_url = `${process.env.REACT_APP_RAILS_URL}/images/header_logo.gif`
+  
 
-  console.log(img_url);
+  console.log({img_url});
 
   return (
       <div>
