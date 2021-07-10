@@ -31,11 +31,8 @@ function handleRemoveFavorite(){
         .then(data => {
            console.log(data)
           // if we want to remove snack from stash and stay on stash need state
-           //history.push('/SnackContainer')
-          //  const updatedStash = stashFavorites.filter((stashItem) => stashItem.id !== data.id);
-          //  setCurrentStash(updatedStash)
+           //history.push('/SnackContainer'
           onRemoveFavorite(data)
-           //history.push('/Stash')
         })
 }
 
