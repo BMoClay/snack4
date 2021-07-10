@@ -14,8 +14,9 @@ function FavSnackItem({ stashItem }) {
 //   snackId: favorites.snackId,
 //   favoritesId: favorites.favoritesId
 // }
-
+console.log({snack})
 console.log({stashItem})
+
 
 let img_url = `${process.env.REACT_APP_RAILS_URL}/${snack.img}`
 
