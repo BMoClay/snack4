@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import '../FavSnackItem.css'
 
-function FavSnackItem({ stashItem }) {
+function FavSnackItem({ stashItem, stashFavorites, onRemoveFavorite }) {
   let history = useHistory()
-  const [currentStash, setCurrentStash] = useState([])
+  // const [currentStash, setCurrentStash] = useState([])
 
   const { id, snack } = stashItem;
 // const { userId, snackId} = favorite
@@ -16,6 +16,7 @@ function FavSnackItem({ stashItem }) {
 // }
 console.log({snack})
 console.log({stashItem})
+console.log({stashFavorites})
 
 
 let img_url = `${process.env.REACT_APP_RAILS_URL}/${snack.img}`
@@ -28,9 +29,13 @@ function handleRemoveFavorite(){
        })
         .then(response => response.json())
         .then(data => {
-          //  console.log(data)
+           console.log(data)
           // if we want to remove snack from stash and stay on stash need state
-           history.push('/SnackContainer')
+           //history.push('/SnackContainer')
+          //  const updatedStash = stashFavorites.filter((stashItem) => stashItem.id !== data.id);
+          //  setCurrentStash(updatedStash)
+          onRemoveFavorite(data)
+           //history.push('/Stash')
         })
 }
 
